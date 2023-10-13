@@ -18,67 +18,58 @@ const Data = () => {
             setAge("");
         }
     };
+
     return (
-        <>
-            <Paper elevation={3} style={{ padding: "20px" }}>
-            <Grid container spacing={3}>
-                <Grid item lg={3} sx={6} xs={12}>
-                <TextField
-                    fullWidth
-                    id="filled-basic"
-                    label="Enter your Name"
-                    variant="filled"
-                    value={name}
-                    color="secondary"
-                    onChange={(e) => setName(e.target.value)}
-                />
-                </Grid>
-                <Grid item lg={3} sx={6} xs={12}>
+        <Grid container justifyContent="center">
+            <Grid item xs={12} sm={6}>
+                <Paper elevation={3} style={{ padding: "20px" }}>
                     <TextField
+                        id="filled-basic"
+                        label="Enter your Name"
+                        variant="filled"
+                        value={name}
+                        color="secondary"
+                        onChange={(e) => setName(e.target.value)}
                         fullWidth
+                    />
+                    <TextField
                         id="filled-basic"
                         label="Enter your Last Name"
                         variant="filled"
                         value={lastName}
                         color="secondary"
                         onChange={(e) => setLastName(e.target.value)}
-                    />
-                </Grid>
-                <Grid item lg={3} sx={6} xs={12}>
-                    <TextField
                         fullWidth
+                    />
+                    <TextField
                         id="filled-basic"
                         label="Enter your Age"
                         variant="filled"
                         value={age}
                         color="secondary"
                         onChange={(e) => setAge(e.target.value)}
+                        fullWidth
                     />
-                </Grid>
-                <Grid item xs={12}>
-                    <Button variant="contained" onClick={handleData}>Add Data</Button>
-                </Grid>
+                    <Button variant="contained" onClick={handleData} fullWidth>
+                        Add Data
+                    </Button>
+                    <table style={{ marginTop: "20px" }}>
+                            <tr>
+                                <th>Name</th>
+                                <th>Last Name</th>
+                                <th>Age</th>
+                            </tr>
+                            {data.map((item, index) => (
+                                <tr key={index}>
+                                    <td>{item.name}</td>
+                                    <td>{item.lastName}</td>
+                                    <td>{item.age}</td>
+                                </tr>
+                            ))}
+                    </table>
+                </Paper>
             </Grid>
-            <table style={{ marginTop: "20px" }}>
-                <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Last Name</th>
-                    <th>Age</th>
-                </tr>
-                </thead>
-                <tbody>
-                {data.map((item, index) => (
-                    <tr key={index}>
-                    <td>{item.name}</td>
-                    <td>{item.lastName}</td>
-                    <td>{item.age}</td>
-                    </tr>
-                ))}
-                </tbody>
-            </table>
-            </Paper>
-        </>
+        </Grid>
     );
 };
 export default Data;
