@@ -1,10 +1,10 @@
 body{
   margin:0px;
   padding:0px;
-  /* background-color: rgb(160, 235, 235); */
+  background-color: rgb(160, 235, 235);
 }
 .active{
-  color:rgb(88, 236, 55)
+  color:rgb(55, 94, 236)
 }
 .error{
   display:flex;

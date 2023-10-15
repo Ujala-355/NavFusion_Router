@@ -9,18 +9,20 @@ const Data = () => {
     const [name, setName] = useState("");
     const [lastName, setLastName] = useState("");
     const [age, setAge] = useState("");
+    const [number,setNumber]=useState("");
 
     const handleData = () => {
-        if (name && lastName && age) {
-            setData([...data, { name, lastName, age }]);
+        if (name && lastName && age && number) {
+            setData([...data, { name, lastName, age, number}]);
             setName("");
             setLastName("");
             setAge("");
+            setNumber("");
         }
     };
 
     return (
-        <Grid container justifyContent="center">
+        <Grid container justifyContent="center" marginTop="10px">
             <Grid item xs={12} sm={6}>
                 <Paper elevation={3} style={{ padding: "20px" }}>
                     <TextField
@@ -50,6 +52,15 @@ const Data = () => {
                         onChange={(e) => setAge(e.target.value)}
                         fullWidth
                     />
+                    <TextField
+                        id="filled-basic"
+                        label="Enter your Number"
+                        variant="filled"
+                        value={number}
+                        color="secondary"
+                        onChange={(e) => setNumber(e.target.value)}
+                        fullWidth
+                    />
                     <Button variant="contained" onClick={handleData} fullWidth>
                         Add Data
                     </Button>
@@ -58,12 +69,14 @@ const Data = () => {
                                 <th>Name</th>
                                 <th>Last Name</th>
                                 <th>Age</th>
+                                <th>Number</th>
                             </tr>
                             {data.map((item, index) => (
                                 <tr key={index}>
                                     <td>{item.name}</td>
                                     <td>{item.lastName}</td>
                                     <td>{item.age}</td>
+                                    <td>{item.number}</td>
                                 </tr>
                             ))}
                     </table>

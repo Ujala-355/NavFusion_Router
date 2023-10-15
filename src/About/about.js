@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
 import {useNavigate} from "react-router-dom";
 const About=()=>{
     const navigate=useNavigate();
@@ -11,11 +12,19 @@ const About=()=>{
     }
     return(
         <>
-            <section>
-                <h1>About Page</h1>
-                <Button onClick={handle} variant="contained" style={buttonStyle}>Go to Cantact</Button>
-                <Button onClick={()=>navigate(-1)} variant="contained">Go back</Button>
-            </section>
+            <Grid container justifyContent="center" marginTop="20px">
+                <Grid item>
+                    <Button onClick={handle} variant="contained" style={buttonStyle}>
+                        Go to the Cantact page
+                    </Button>
+                </Grid>
+                <Grid item>
+                    <Button onClick={() => navigate(-1)} variant="contained">
+                        Go Back
+                    </Button>
+                </Grid>
+            </Grid>
+            
         </>
     )
 }

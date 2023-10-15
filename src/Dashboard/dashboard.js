@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
 import {useNavigate} from "react-router-dom";
 const Dashboard=()=>{
     const navigate=useNavigate()
@@ -11,11 +12,18 @@ const Dashboard=()=>{
     }
     return(
         <>
-            <section>
-                <h1>Dashboard Page</h1>
-                <Button onClick={handle} variant="contained" style={buttonStyle} >Go to the Home page</Button>
-                <Button onClick={()=>navigate(-1)} variant="contained">Go Back</Button>
-            </section>
+            <Grid container justifyContent="center" marginTop="20px">
+                <Grid item>
+                    <Button onClick={handle} variant="contained" style={buttonStyle}>
+                        Go to the Home page
+                    </Button>
+                </Grid>
+                <Grid item>
+                    <Button onClick={() => navigate(-1)} variant="contained">
+                        Go Back
+                    </Button>
+                </Grid>
+            </Grid>
         </>
     )
 }

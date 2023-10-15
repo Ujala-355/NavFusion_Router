@@ -1,7 +1,8 @@
 import React from "react";
 import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
 import {useNavigate} from "react-router-dom";
-import Data from "./information"
+import Jewelery from "./jewelery"
 const Home=()=>{
     const navigate=useNavigate()
     const handle=()=>{
@@ -12,11 +13,19 @@ const Home=()=>{
     }
     return(
         <>  
-            <Data/>
-            <section>
-                <Button onClick={handle} variant="contained" style={buttonStyle} >Go to the About page</Button>
-                <Button onClick={()=>navigate(-1)} variant="contained">Go Back</Button>
-            </section>
+            <Jewelery/>
+            <Grid container justifyContent="center" marginTop="20px">
+                <Grid item>
+                    <Button onClick={handle} variant="contained" style={buttonStyle}>
+                        Go to the About page
+                    </Button>
+                </Grid>
+                <Grid item>
+                    <Button onClick={() => navigate(-1)} variant="contained">
+                        Go Back
+                    </Button>
+                </Grid>
+            </Grid>
         </>
     )
 }
