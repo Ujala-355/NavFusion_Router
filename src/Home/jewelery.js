@@ -3,6 +3,8 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
 import TextField from "@mui/material/TextField";
+// import { Grid, List, ListItem, ListItemText, ListItemIcon } from '@mui/material';
+
 
 const Jewelery=()=>{
     const[products,setProducts]=useState([]);
@@ -10,10 +12,10 @@ const Jewelery=()=>{
     const[price,setPrice]=useState("");
 
     useEffect(()=>{
-        fetch("https://fakestoreapi.com/products/category/jewelery")
-        .then((response)=>response.json())
-        .then((data)=>setProducts(data))
-        .catch((error)=>console.log("error", error));
+        fetch("https://fakestoreapi.com/products")
+            .then((response)=>response.json())
+            .then((data)=>setProducts(data))
+            .catch((error)=>console.log("error", error));
     },[]);
 
     const handleDelete=(id)=>{
@@ -38,7 +40,7 @@ const Jewelery=()=>{
         <>
             <div>
                 <h1>Jewelry Products</h1>
-                <ul>
+                <ol>
                     {products.map((p) => (
                         <li key={p.id}>
                         <Typography>{p.title}</Typography>
@@ -47,7 +49,7 @@ const Jewelery=()=>{
                         <DeleteIcon onClick={()=>handleDelete(p.id)} />
                     </li>
                 ))}
-                </ul>
+                </ol>
             </div>
             <div>
                 <Typography>Add New Product</Typography>

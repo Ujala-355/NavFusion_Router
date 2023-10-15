@@ -2,6 +2,7 @@ import React from "react";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import {useNavigate} from "react-router-dom";
+import MyTable from "./productData"
 const About=()=>{
     const navigate=useNavigate();
     const handle=()=>{
@@ -12,6 +13,7 @@ const About=()=>{
     }
     return(
         <>
+            <MyTable/>
             <Grid container justifyContent="center" marginTop="20px">
                 <Grid item>
                     <Button onClick={handle} variant="contained" style={buttonStyle}>
@@ -24,7 +26,6 @@ const About=()=>{
                     </Button>
                 </Grid>
             </Grid>
-            
         </>
     )
 }
