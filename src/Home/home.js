@@ -2,7 +2,7 @@ import React from "react";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import {useNavigate} from "react-router-dom";
-import Jewelery from "./jewelery"
+import Products from "./product"
 const Home=()=>{
     const navigate=useNavigate()
     const handle=()=>{
@@ -13,7 +13,7 @@ const Home=()=>{
     }
     return(
         <>  
-            <Jewelery/>
+            <Products/>
             <Grid container justifyContent="center" marginTop="20px">
                 <Grid item>
                     <Button onClick={handle} variant="contained" style={buttonStyle}>

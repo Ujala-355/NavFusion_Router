@@ -8,7 +8,7 @@ const Header=()=>{
     return(
         <>
             <header>
-                <img src={wingImage} style={wing}/>
+                <img src={wingImage} style={wing} alt="logo"/>
                 <nav>
                     <ul Style="list-style-type:none;">
                         <li>

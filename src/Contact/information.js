@@ -22,7 +22,7 @@ const Data = () => {
     };
 
     return (
-        <Grid container justifyContent="center" marginTop="10px">
+        <Grid container style={{ display: "flex", justifyContent: "center", margin: "50px", padding: "20px" }}>
             <Grid item xs={12} sm={6}>
                 <Paper elevation={3} style={{ padding: "20px" }}>
                     <TextField
