@@ -14,7 +14,6 @@ const Products = () => {
             .then((data) => setProducts(data))
             .catch((error) => console.log("error", error));
     }, []);
-
     return (
         <>
             <div>
